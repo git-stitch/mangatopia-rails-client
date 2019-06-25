@@ -1,0 +1,10 @@
+<h1>Manga Genre List</h1>
+
+<div class="hero2">
+	
+</div>
+<ul>
+	<% @genres.each do |genre| %>
+		<li><%= link_to "#{genre.name.titleize}", genre %></li>
+	<% end %>
+</ul>

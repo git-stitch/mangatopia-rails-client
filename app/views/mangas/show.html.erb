@@ -1,0 +1,33 @@
+
+<div class="container">
+	<h1><%= @manga.name.titleize %></h1>
+	<div class="row">
+    <div class="col s6 m6">
+      <div class="card" style="z-index: 0">
+        <div class="card-image">
+          <%= image_tag ("#{@manga.cover_art}") %>
+        </div>
+        <div class="card-content">
+        	<p>Author: <%= @manga.author.titleize
+           %></p>
+          <p>Genre(s): <% @manga.genres.each do |genre| %>
+          		<%= link_to genre.name.titleize,genre %>,
+          	<% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<div>
+		<h2>Chapter List</h2>
+		<h5>Current Chapter:</h5>
+		<table>
+			<% @manga.chapters.each do |chapter| %>
+			<tr>
+				<td><%= link_to "Chapter #{chapter.chapter_number}", chapter %></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<h1><%= link_to "#{@chapter.manga.name.titleize}", @chapter.manga %> <%= @chapter.chapter_number %></h1>
+
+<div class="container">
+	<%= button_to "Back to Manga", @chapter.manga, method: :get %>
+	
+	<% if @chapter.id != @first_chapter.id %>
+	<%= button_to "Prev Chapter", @prev_chapter, method: :get %>
+	<% end %>
+
+	<% if @chapter != @last_chapter %>
+	<%= button_to "Next Chapter", @next_chapter, method: :get %>
+	<% end %>
+
+	<% @pages.each do |page| %>
+		<%= image_tag ("#{page.page_url}") %>
+	<% end %>
+	
+	<% if @chapter != @last_chapter %>
+	<%= button_to "Next Chapter", @next_chapter, method: :get %>
+	<% end %>
+</div>

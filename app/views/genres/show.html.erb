@@ -1,0 +1,9 @@
+<h1><%= @genre.name.titleize
+ %> Mangas</h1>
+
+<%= button_to "Back", genres_path, method: :get %>
+<ul>
+	<% @genre.mangas.each do |manga| %>
+		<li><%= link_to "#{manga.name.titleize}", manga %></li>
+	<% end %>
+</ul>

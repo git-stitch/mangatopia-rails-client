@@ -1,0 +1,13 @@
+<div id="slider">
+<ul>
+  <% @mangas.each do |manga| %>
+	<li>
+	<div class="slider-container">
+    <%= link_to (image_tag ("#{manga.cover_art}"), size:"200"), manga %>
+  	<p><%= manga.name.titleize %></p>
+	</div>
+	</li>
+  <% end %>
+</ul>
+</div>
+

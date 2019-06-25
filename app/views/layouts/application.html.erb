@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MangaTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <nav class="nav">
+    <ul>
+      <li><%= link_to "Mangas", mangas_path %></li>
+      <li><%= link_to "Genres", genres_path %></li>
+    </ul>
+  </nav>
+  <br>
+  <br>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

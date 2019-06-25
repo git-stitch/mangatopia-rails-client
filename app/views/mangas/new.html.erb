@@ -1,0 +1,17 @@
+<h1>Manga Adder</h1>
+
+<h3>Search a Manga to Add</h3>
+
+<div style="color:red">
+	<% @manga.errors.full_messages.each do |message| %>
+		<%= message %>
+	<% end %>
+	<br>
+</div>
+<div class="search">
+	<%= form_for @manga do |form|%>
+		<%= form.label :name %>
+		<%= form.text_field :name %>	
+		<%= form.submit%>
+	<% end %>	
+</div>

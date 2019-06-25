@@ -1,0 +1,39 @@
+<h1>Welcome to Mangatopia</h1>
+
+<div class="hero">
+
+</div>
+
+<%= render "form" %>
+<div class="container">
+	<%= button_to "Add a Manga", new_manga_path, method: :get, class: "waves-effect waves-light btn-large", style:"background:#64ffda; color:black; border-radius:20px;float:right;z-index:0" %>
+	<h2>Manga List</h2>
+	
+</div>
+<div class="box" style="float:right; border:none; margin-right:30px ">
+	<h4>Genres</h4>
+	<ul>
+		<% @genres.each do |genre| %>
+			<li><%= link_to "#{genre.name.titleize}", genre %></li>
+		<% end %>
+	</ul>
+</div>
+
+<div class="container">
+	<div class="row" style="border:solid;border-radius:20px; height:140vh; overflow-y: scroll;border-color:#2C146B">
+		<% @mangas.each do |manga| %>
+		<div class="col s12 m4 l3" style="margin:0 auto; margin-bottom: 10px; height: 280px">
+			<div>
+				<label for="manga">
+					<%= link_to (image_tag ("#{manga.cover_art}"), size:"200"), manga, class:"hoverable" %>
+				</label>
+				<p><strong><%= link_to "#{manga.name.titleize} ", manga %></strong></p>
+			</div>
+		</div>
+		<% end %>
+	</div>
+
+	<%= button_to "Add a Manga", new_manga_path, method: :get, class: "waves-effect waves-light btn-large", style:"background:#64ffda; color:black; border-radius:20px" %>
+
+</div>
+
